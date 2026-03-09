@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+
+data/
+
+baselines/
+
+
+__pycache__/
+
+notebook/upload_data.ipynb
+notebook/analysis.ipynb

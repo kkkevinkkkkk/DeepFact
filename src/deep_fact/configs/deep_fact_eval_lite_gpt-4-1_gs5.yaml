@@ -1,0 +1,18 @@
+agent:
+  type: deep_evaluator_batched_cached
+  max_steps: 2
+  max_queries: 5
+  max_sources: 40
+  max_completion_tokens: 8192
+  user_timeout: 30.0
+  interactive: false
+  use_cache: true
+  remove_thinking_tags: true
+  debug_file_path: ""
+  planning_model: "openai/gpt-4.1"
+  summarization_model: "openai/gpt-4.1-mini"
+  json_model: "openai/gpt-4.1"
+  answer_model:  "openai/gpt-4.1"
+  group_size: 5
+  verification_queries_group_size: -1
+  compress_doc: false

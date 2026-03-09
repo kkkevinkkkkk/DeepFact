@@ -3,7 +3,7 @@
 
 data/
 
-baselines/
+baselines/gpt-researcher
 
 
 __pycache__/

@@ -1,4 +1,4 @@
-from deep_fact.evaluators.core import DeepFactEvaluator, DeepFactEvaluatorLite
+from deep_fact.evaluators.core import DeepFactEvaluatorLite
 from deep_fact.evaluators.factory import create_agent
 from deep_fact.evaluators.models import (
     DeepResearchResult,
@@ -12,7 +12,6 @@ from deep_fact.evaluators.models import (
 
 __all__ = [
     "create_agent",
-    "DeepFactEvaluator",
     "DeepFactEvaluatorLite",
     "DeepResearchResult",
     "DeepResearchResults",

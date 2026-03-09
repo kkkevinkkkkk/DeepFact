@@ -4,7 +4,7 @@ import yaml
 import asyncio
 # from fact_eval.deep_research_tg.together_open_deep_research import DeepResearcher
 
-from deep_fact.evaluators.core.deep_fact_eval import DeepFactEvaluator
+# from deep_fact.evaluators.core.deep_fact_eval import DeepFactEvaluator
 from deep_fact.evaluators.core.deep_fact_eval_lite import DeepFactEvaluatorLite
 from typing import List
 
@@ -32,10 +32,10 @@ def create_agent(config: str, return_instance: bool = False, **kwargs) -> Any:
         if "max_steps" in agent_config:
             agent_config["budget"] = agent_config.pop("max_steps")
 
-        if agent_type == "deep_evaluator_advanced_cached":
-            researcher = DeepFactEvaluator(**agent_config)
+        # if agent_type == "deep_evaluator_advanced_cached":
+        #     researcher = DeepFactEvaluator(**agent_config)
 
-        elif agent_type == "deep_evaluator_batched_cached":
+        if agent_type == "deep_fact_eval_lite":
             researcher = DeepFactEvaluatorLite(**agent_config)
             if "group_size" in kwargs:
                 researcher.group_size = kwargs["group_size"]
@@ -50,7 +50,7 @@ def create_agent(config: str, return_instance: bool = False, **kwargs) -> Any:
         def research_wrapper_batched(report: str, claims: List[str]):
             return asyncio.run(researcher.evaluate_report_claims(report, claims))
 
-        if agent_type == "deep_evaluator_batched_cached":
+        if agent_type == "deep_fact_eval_lite":
             return research_wrapper_batched
         else:
             return research_wrapper

@@ -1,5 +1,5 @@
 agent:
-  type: deep_evaluator_batched_cached
+  type: deep_fact_eval_lite
   max_steps: 2
   max_queries: 5
   max_sources: 40
